@@ -11,11 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     services:
-
       postgres:
-
         image: postgres:15.3
-
         env:
           POSTGRES_USER: santosh
           POSTGRES_PASSWORD: password
@@ -28,11 +25,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-    
 
-
-
-    
     defaults:
       run:
         working-directory: ./backend
