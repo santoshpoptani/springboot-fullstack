@@ -8,6 +8,9 @@ public class DeployAmigoescodeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DeployAmigoescodeApplication.class, args);
+
+
+
     }
 
 }
