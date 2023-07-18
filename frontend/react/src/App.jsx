@@ -42,7 +42,10 @@ function App() {
                 {
                     students.map((student, index) => (
                         <WrapItem key={index}>
-                            <ProfileCards {...student}/>
+                            <ProfileCards
+                                {...student}
+                                number={index}
+                            />
                         </WrapItem>
                     ))
                 }

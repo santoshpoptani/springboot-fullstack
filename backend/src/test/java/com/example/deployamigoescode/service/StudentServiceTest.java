@@ -1,5 +1,6 @@
 package com.example.deployamigoescode.service;
 
+import com.example.deployamigoescode.Gender;
 import com.example.deployamigoescode.entity.StudentEnity;
 import com.example.deployamigoescode.repository.StudentRepository;
 
@@ -39,7 +40,7 @@ class StudentServiceTest {
     @Test
     void saveStudent() {
         //GIVEN
-        StudentEnity studentEnity = new StudentEnity(1,"san",20);
+        StudentEnity studentEnity = new StudentEnity(1,"san",20, Gender.MALE);
         //WHEN
         underTest.saveStudent(studentEnity);
         //THEN

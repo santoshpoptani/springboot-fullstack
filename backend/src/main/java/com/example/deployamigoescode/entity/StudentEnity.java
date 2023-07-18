@@ -1,5 +1,6 @@
 package com.example.deployamigoescode.entity;
 
+import com.example.deployamigoescode.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,8 +30,15 @@ public class StudentEnity {
     )
     private int age;
 
-    public StudentEnity(String name, int age) {
+    @Column(
+            nullable = false
+    )
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    public StudentEnity(String name, int age, Gender gender) {
         Name = name;
         this.age = age;
+        this.gender = gender;
     }
 }

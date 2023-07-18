@@ -1,6 +1,7 @@
 package com.example.deployamigoescode.journeys;
 
 
+import com.example.deployamigoescode.Gender;
 import com.example.deployamigoescode.entity.StudentEnity;
 import net.datafaker.Faker;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,8 @@ public class StudentIntegrationTest {
         Faker faker = new Faker();
         String name = faker.name().fullName();
         int age = faker.number().numberBetween(20, 50);
-        StudentEnity enity = new StudentEnity(name, age);
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+        StudentEnity enity = new StudentEnity(name, age, gender);
 
         //Post Request using webTestClient
 
@@ -54,7 +56,7 @@ public class StudentIntegrationTest {
                 .returnResult()
                 .getResponseBody();
 
-        StudentEnity expected = new StudentEnity(name, age);
+        StudentEnity expected = new StudentEnity(name, age, gender);
 
         assertThat(GetAllStudent)
                 .usingRecursiveFieldByFieldElementComparatorIgnoringFields("id")

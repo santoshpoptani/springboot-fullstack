@@ -11,7 +11,8 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 
-export default function ProfileCards({id , name ,age}) {
+export default function ProfileCards({id , name ,age,gender,number}) {
+    const gen = gender==="MALE" ? "men" : "women"
     return (
         <Center py={6}>
             <Box
@@ -33,7 +34,7 @@ export default function ProfileCards({id , name ,age}) {
                     <Avatar
                         size={'xl'}
                         src={
-                            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
+                            `https://randomuser.me/api/portraits/${gen}/${number}.jpg`
                         }
                         alt={'Author'}
                         css={{
@@ -49,7 +50,7 @@ export default function ProfileCards({id , name ,age}) {
                             {name}
                         </Heading>
                         <Text color={'gray.500'}>Frontend Developer</Text>
-                        <Text color={'gray.500'}>{age}</Text>
+                        <Text color={'gray.500'}>{age} | {gender}</Text>
                     </Stack>
                 </Box>
             </Box>
