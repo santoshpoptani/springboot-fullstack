@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "studentapi",
-      "image": "santoshpoptani/student-api:14.07.2023.11.57.45",
+      "image": "santoshpoptani/student-api:18.07.2023.08.53.29",
       "essential": true,
       "memory": 512,
       "portMappings": [
