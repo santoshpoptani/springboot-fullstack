@@ -18,13 +18,26 @@ public class endpoints {
 
 
     @GetMapping
-    public List<StudentEnity> getallstudents(){
+    public List<StudentEnity> getallstudents() {
 
         return studentService.getStudents();
     }
 
     @PostMapping
-    public void savestudent(@RequestBody StudentEnity studentEnity){
+    public void savestudent(@RequestBody StudentEnity studentEnity) {
         studentService.saveStudent(studentEnity);
     }
+
+    @DeleteMapping("{id}")
+    public void deletestudent(@PathVariable("id") Integer id) {
+        studentService.deleteStudent(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateStudent(
+            @PathVariable("id") Integer id,
+            @RequestBody StudentEnity studentEnity) {
+        studentService.updateStudent(id,studentEnity);
+    }
+
 }

@@ -23,7 +23,7 @@ public class DeployAmigoescodeApplication {
             int age = faker.number().numberBetween(20, 50);
             Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
             StudentEnity enity = new StudentEnity(name,age,gender);
-            studentRepository.save(enity);
+           // studentRepository.save(enity);
 
         };
     }

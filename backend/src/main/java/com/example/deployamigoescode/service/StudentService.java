@@ -28,4 +28,14 @@ public class StudentService {
     public void saveStudent(StudentEnity studentEnity){
         repository.save(studentEnity);
     }
+    public void deleteStudent(long id){
+        repository.deleteById(id);
+    }
+
+    public void updateStudent(long id,StudentEnity studentEnity){
+        StudentEnity stu = repository.findById(id).get();
+        stu.setAge(studentEnity.getAge());
+        stu.setName(studentEnity.getName());
+        repository.save(stu);
+    }
 }
