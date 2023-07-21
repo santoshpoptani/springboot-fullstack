@@ -2,7 +2,7 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "fronten-react",
+      "name": "frontend-react",
       "image": "santoshpoptani/student-react:latest",
       "essential": true,
       "memory": 256,
@@ -15,7 +15,7 @@
     },
     {
       "name": "studentapi",
-      "image": "santoshpoptani/student-api:20.07.2023.09.56.43",
+      "image": "santoshpoptani/student-api",
       "essential": true,
       "memory": 512,
       "portMappings": [
@@ -27,7 +27,7 @@
       "environment": [
         {
           "name": "SPRING_DATASOURCE_URL",
-          "value": "jdbc:postgresql://awseb-e-mfpanfeqcm-stack-awsebrdsdatabase-c4i5hlzyj4f4.cnrhrsb7ahlg.ap-south-1.rds.amazonaws.com:5432/student"
+          "value": "jdbc:postgresql://awseb-e-n3qtmzamsb-stack-awsebrdsdatabase-z7zzlrn0jmdk.cnrhrsb7ahlg.ap-south-1.rds.amazonaws.com:5432/student"
         }
       ]
     }

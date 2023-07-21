@@ -88,6 +88,7 @@
                         <!--this setting is to run application on random port-->
                         <configuration>
                             <arguments>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <argument>--server.port=${tomcat.http.port}</argument>
                             </arguments>
                         </configuration>
@@ -122,6 +123,7 @@
                         <include>**/*IntegrationTest.java</include>
                     </includes>
                     <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
                         <test.server.port>${tomcat.http.port}</test.server.port>
                     </systemPropertyVariables>
                 </configuration>
@@ -179,14 +181,14 @@
                     </to>
                 </configuration>
                 <!--This tag is used to include the build of image in maven lifecycle-->
-                <!--<executions>
+                <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
                         </goals>
                     </execution>
-                </executions>-->
+                </executions>
             </plugin>
         </plugins>
     </build>
