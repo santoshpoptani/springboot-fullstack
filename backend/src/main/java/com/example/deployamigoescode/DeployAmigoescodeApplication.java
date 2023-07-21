@@ -25,6 +25,8 @@ public class DeployAmigoescodeApplication {
             StudentEnity enity = new StudentEnity(name,age,gender);
            // studentRepository.save(enity);
 
+
+
         };
     }
 
