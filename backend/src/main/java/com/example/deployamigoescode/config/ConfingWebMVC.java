@@ -14,16 +14,14 @@ import java.util.List;
 public class ConfingWebMVC implements WebMvcConfigurer {
 
 
-    @Value("#{'${cors.allowed-origins}'.split(',')}")
-    private List<String> allowedOrigins;
-
-    @Value("#{'${cors.allowed-methods}'.split(',')}")
-    private List<String> allowedMethods;
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        CorsRegistration corsRegistration = registry.addMapping("/api/**");
-        allowedOrigins.forEach(corsRegistration::allowedOrigins);
-        allowedMethods.forEach(corsRegistration::allowedMethods);
-}
+         registry.addMapping("/api/**")
+                 .allowedOrigins("*","Student-api-env-1.eba-r3ngmchq.ap-south-1.elasticbeanstalk.com")
+                 .allowedMethods("*");
+
+
+
+
+    }
 }
