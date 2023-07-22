@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://student-api-env-1.eba-r3ngmchq.ap-south-1.elasticbeanstalk.com:8080/")
 @RestController
 @RequestMapping("api/v1/student")
 public class endpoints {
