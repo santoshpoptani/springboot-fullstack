@@ -20,7 +20,7 @@ public class ConfingWebMVC {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**").allowedOrigins("http://student-api-env-1.eba-r3ngmchq.ap-south-1.elasticbeanstalk.com/");
+                registry.addMapping("/**").allowedOrigins("http://student-api-env-1.eba-r3ngmchq.ap-south-1.elasticbeanstalk.com/");
             }
         };
     }
