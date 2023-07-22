@@ -12,16 +12,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 @Configuration
-public class ConfingWebMVC {
+public class ConfingWebMVC implements WebMvcConfigurer {
 
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://student-api-env-1.eba-r3ngmchq.ap-south-1.elasticbeanstalk.com/");
-            }
-        };
+    @Value("#{'${cors.allowed-origins}'.split(',')}")
+    private List<String> allowedOrigins;
+
+    @Value("#{'${cors.allowed-methods}'.split(',')}")
+    private List<String> allowedMethods;
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        CorsRegistration corsRegistration = registry.addMapping("/api/**");
+        allowedOrigins.forEach(corsRegistration::allowedOrigins);
+        allowedMethods.forEach(corsRegistration::allowedMethods);
     }
 }
