@@ -17,7 +17,8 @@ import java.util.List;
 public class ConfingWebMVC implements WebMvcConfigurer {
 
 
-    @Value("#{'${cors.allowed-origins}'.split(',')}")
+    @Value("#{'${" +
+            "cors.allowed-origins}'.split(',')}")
     private List<String> allowedOrigins;
 
     @Value("#{'${cors.allowed-methods}'.split(',')}")
