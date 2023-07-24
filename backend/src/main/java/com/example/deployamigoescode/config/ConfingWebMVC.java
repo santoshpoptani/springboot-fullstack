@@ -30,5 +30,6 @@ public class ConfingWebMVC implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .allowedHeaders("*")
                 .allowCredentials(true);
+
     }
 }
