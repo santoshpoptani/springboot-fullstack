@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 @Configuration
-@ConfigurationProperties
+@EnableWebMvc
 public class ConfingWebMVC implements WebMvcConfigurer {
 
 
@@ -25,8 +25,10 @@ public class ConfingWebMVC implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        CorsRegistration corsRegistration = registry.addMapping("/api/**");
-        allowedOrigins.forEach(corsRegistration::allowedOrigins);
-        allowedMethods.forEach(corsRegistration::allowedMethods);
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
